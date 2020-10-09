@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   postcodeIO: {
-    api: 'https://api.postcodes.io/'
+    api: 'https://api.postcodes.io'
   }
 };
 
