@@ -22,4 +22,9 @@ describe('ErrorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render an error', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.error').textContent).toContain('Oh dear. The postcode you entered is invalid.');
+  });
 });

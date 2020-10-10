@@ -29,4 +29,9 @@ describe('SearchComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.search__label').textContent).toContain('Find postcode information');
   });
+
+  it('should render search form', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.search__input')).toBeTruthy();
+  });
 });
