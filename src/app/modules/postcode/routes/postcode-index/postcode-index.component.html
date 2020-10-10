@@ -5,9 +5,26 @@
     </div>
 </div>
 
-<ng-container *ngIf="location">
-    <app-postcode-result
-        class="results"
-        [location]="location">
-    </app-postcode-result>
-</ng-container>
+<div *ngIf="location" class="results">
+    <div class="results__container">
+
+        <div class="results__result">
+            <app-postcode-result
+                class="results"
+                [location]="location">
+            </app-postcode-result>
+        </div>
+
+        <div *ngIf="!nearestLocations; else nearest" class="results__nearest">
+            <app-postcode-find-nearest [postcode]="location.postcode" (find)="onNearest($event)"></app-postcode-find-nearest>
+        </div>
+
+        <ng-template #nearest>
+            <div class="results__nearest-locations">
+                <h3>Nearby postcodes</h3>
+                <p *ngFor="let location of nearestLocations">{{ location.postcode }}</p>
+            </div>
+        </ng-template>
+
+    </div>
+</div>

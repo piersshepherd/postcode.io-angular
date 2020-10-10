@@ -1,7 +1,36 @@
 @import 'variables';
 @import 'mixins/mixins';
-@import 'core/layout';
 
 .banner {
     padding: 4rem 0;
+}
+
+.results {
+    padding: 4rem 0;
+    background-color: $color-gray-lighter;
+
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        width: $container-width;
+        margin: 0 auto;
+    }
+
+    &__nearest-locations {
+        padding: 1rem;
+        border: 1px solid $color-gray-lighter;
+        border-radius: 5px;
+        background: white;
+    }
+
+    @include x-at-least($breakpoint-sm) {
+        &__result {
+            flex: 1 0 auto;
+        }
+
+        &__nearest,
+        &__nearest-locations {
+            flex: 0 0 20rem;
+        }
+    }
 }

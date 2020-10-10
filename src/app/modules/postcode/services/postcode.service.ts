@@ -22,7 +22,7 @@ export class PostcodeService {
     const url = this.buildUrl(['postcodes', this.cleanPostcode(postcode)]);
     return this.http.get(url).pipe(
       map(response => this.extractResult(response)),
-      map(response => this.formatResponseData(response)),
+      map(response => this.formatResponsePostcode(response)),
       catchError(this.handleError),
     );
   }
@@ -33,7 +33,11 @@ export class PostcodeService {
   getNearestPostcodes(postcode: string): Observable<any> {
     // We'll trim the spaces from the postcode for simplicity.
     const url = this.buildUrl(['postcodes', this.cleanPostcode(postcode), 'nearest']);
-    return this.http.get(url);
+    return this.http.get(url).pipe(
+      map(response => this.extractResult(response)),
+      map(response => this.formatResponsePostcodes(response)),
+      catchError(this.handleError),
+    );
   }
 
   /**
@@ -63,8 +67,11 @@ export class PostcodeService {
   /**
    * Explicitly build a location object. Lets not reply on a third party
    * services to remain consitent. Here we can put in safeguards.
+   *
+   * @note res:any We use any here, but we could provide a type that represents
+   *   the response structure from postcodes.io.
    */
-  private formatResponseData(res: any): PostcodeLocation {
+  private formatResponsePostcode(res: any): PostcodeLocation {
     return {
       postcode: res.postcode,
       outcode: res.outcode,
@@ -100,6 +107,16 @@ export class PostcodeService {
         nuts: res.codes.nuts,
       }
     }
+  }
+
+  /**
+   * Similar to formatResponsePostcode, but for an array of postscodes.
+   *
+   * @note res:any We use any here, but we could provide a type that represents
+   *   the response structure from postcodes.io.
+   */
+  private formatResponsePostcodes(res: any[]): PostcodeLocation[] {
+    return res.map(this.formatResponsePostcode);
   }
 
   /**
