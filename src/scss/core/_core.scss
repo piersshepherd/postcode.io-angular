@@ -1,0 +1,24 @@
+@import 'variables';
+
+// Import google fonts
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap);
+
+html, body {
+    height: 100%;
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+body {
+    background-color: $color-primary-dark;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+a {
+    color: $color-gray-darker;
+}

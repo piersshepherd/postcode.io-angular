@@ -1,0 +1,33 @@
+/**
+ * Theme variables.
+ */
+
+
+// Fonts
+// ============================================
+$font-family:               'Poppins', sans-serif;
+
+
+// Colors
+// ============================================
+$color-primary:             #f44336;
+$color-primary-dark:        #051e34;
+
+$color-error:               #f11000;
+
+$color-gray-lighter:        #f1f1f1;
+$color-gray-light:          #cccccc;
+$color-gray:                #888888;
+$color-gray-dark:           #585858;
+$color-gray-darker:         #222222;
+
+
+// Layout
+// ============================================
+$container-width:           1000px;
+
+
+// Breakpoints
+// ============================================
+$breakpoint-sm:              768px;
+$breakpoint-md:              980px;

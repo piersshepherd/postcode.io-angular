@@ -1,0 +1,19 @@
+<section class="result">
+    <div class="result__container">
+        <h2>Results for: {{ location.postcode }}</h2>
+        <div *ngFor="let item of location | keyvalue">
+
+            <div *ngIf="item.key !== 'codes'" class="result__item"><strong>{{ item.key }}:</strong> {{ item.value }}</div>
+
+            <ng-container *ngIf="item.key === 'codes'">
+                <div><strong>Codes</strong></div>
+                <div class="result__codes">
+                    <div *ngFor="let item of location.codes | keyvalue" class="result__item">
+                        <div>{{ item.key }}: {{ item.value }}</div>
+                    </div>
+                </div>
+            </ng-container>
+
+        </div>
+    </div>
+</section>

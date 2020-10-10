@@ -1,0 +1,20 @@
+@import 'variables';
+@import 'core/layout';
+
+.result {
+    padding: 4rem 0;
+    background-color: $color-gray-lighter;
+
+    &__container {
+        @extend .container
+    }
+
+    &__codes {
+        margin-left: 2rem;
+    }
+
+    &__item {
+        padding: .5rem 0;
+        border-bottom: $color-gray-lighter;
+    }
+}

@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="banner">
+        <app-postcode-search (submission)="onFormSubmission($event)"></app-postcode-search>
+        <app-postcode-error *ngIf="error"></app-postcode-error>
+    </div>
+</div>
+
+<ng-container *ngIf="location">
+    <app-postcode-result
+        class="results"
+        [location]="location">
+    </app-postcode-result>
+</ng-container>

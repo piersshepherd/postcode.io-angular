@@ -1,0 +1,17 @@
+<form class="search" #searchForm="ngForm">
+    <h1 class="search__title">
+        <label for="postcode" class="search__label">Find postcode information</label>
+    </h1>
+    <input
+        type="text"
+        placeholder="Enter postcode"
+        id="postcode"
+        name="postcode"
+        class="search__input"
+        [(ngModel)]="formInput">
+    <input
+        type="submit"
+        value="Go"
+        class="search__button"
+        (click)="submitForm()">
+</form>

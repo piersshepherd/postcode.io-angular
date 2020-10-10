@@ -1,0 +1,47 @@
+label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: .925rem;
+}
+
+input:not([type=submit]) {
+    background: #fff;
+    border: solid 1px #dadce0;
+    border-radius: 2px;
+    color: rgba(0,0,0,.87);
+    font-family: $font-family;
+    font-size: 14px;
+    vertical-align: middle;
+    height: 40px;
+    line-height: 38px;
+    padding: 0 12px;
+    width: 100%;
+}
+
+textarea {
+    min-width: 272px;
+    padding: 8px;
+    resize: none;
+    width: 100%;
+    background: #fff;
+    border: solid 1px #dadce0;
+    border-radius: 2px;
+    color: rgba(0,0,0,.87);
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 1.4rem;
+}
+
+input[type=submit] {
+    height: 40px;
+    width: auto;
+    padding: 0 12px;
+    background: $color-primary;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+    font-family: $font-family;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 38px;
+}

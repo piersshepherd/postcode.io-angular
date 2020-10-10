@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'variables';
+
+@import 'mixins/mixins';
+
+@import 'core/reset';
+@import 'core/core';
+@import 'core/typography';
+@import 'core/form';
+@import 'core/layout';
